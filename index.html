@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính Quy Đổi Vàng</title>
+    <style> 
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; display: flex; justify-content: center; padding: 20px; }
+        .container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 600px; }
+        h1, h2 { color: #8A6D3B; text-align: center; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input[type="number"] { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .output-section p { font-size: 18px; margin-bottom: 10px; padding: 8px; background-color: #fffbe6; border-left: 5px solid #ffd700; }
+        .output-section span { font-weight: bold; color: #8A6D3B; float: right; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚖️ Máy Tính Quy Đổi </h1>
+
+        <div class="input-section">
+            <h2>Đầu vào (5 Tham số)</h2>
+            <form id="calculatorForm">
+                <label for="weight">1. Khối lượng Vàng (Chỉ - 0.001 ):</label>
+                <input type="number" id="weight" value="1" step="0.001" required>
+
+                <label for="%Input">2. Tuổi Vàng Hiện Tại (% - max 99.99%):</label>
+                <input type="number" id="karatInput" value="52" min="00.01" max="100" step="0.01" required>
+                
+                <label for="currentGoldPrice">3. Giá Vàng 9999/24K (VND/Chỉ) mua vào:</label>
+                <input type="number" id="currentGoldPrice" value="13890" step="1000" required>
+
+                <label for="Spread">4. Chênh lệch giá 24K (VNĐ/Chỉ):</label>
+                <input type="number" id="Spread" value="380"required>
+                
+                <label for="Spread2">5. Chênh lệch giá 17K (VNĐ/Chỉ):</label>
+                <input type="number" id="Spread2" value="600"required>
+                
+                <label for="rateGoldPrice">6. Quy hội 17K - 24K (% - max 99.99%)</label>
+                <input type="number" id="rateGoldPrice" value="74"required>
+                
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="output-section">
+            <h2>Đầu ra (5 Giá trị)</h2>
+            <p>1. Tỷ lệ Vàng Nguyên chất: <span id="result1">0%</span></p>
+            <p>2. Khối lượng Vàng 9999 Tương đương: <span id="result3">0 Chỉ</span></p>
+            <h3>--- Tính toán Quy tuổi ---</h3>
+            <p>3. Khối lượng Vàng: <span id="result4">0 Chỉ</span></p>
+            <p>4. Giá Nhập vào: <span id="result5">0 Chỉ</span></p>
+            <p>5. Giá trị Thực tế (VND): <span id="result2">0 VND</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
